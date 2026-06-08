@@ -1,109 +1,95 @@
 "use client";
-import { motion } from "framer-motion";
-import { Activity, Droplet, Sun } from "lucide-react";
+import { ShieldCheck, Sun, Waves } from "lucide-react";
 
 export default function TechDashboard() {
 	return (
-		<section className="py-32 bg-stone-950 w-full px-6 relative overflow-hidden">
+		<section
+			id="telemetry"
+			className="py-32 bg-stone-950 w-full px-6 border-b border-stone-900">
 			<div className="max-w-7xl mx-auto">
-				<div className="mb-16 text-center md:text-left">
-					<span className="text-xs uppercase tracking-[0.3em] text-emerald-400 mb-3 block font-medium">
-						Ecosystem Control Telemetry
+				<div className="mb-20 text-center md:text-left">
+					<span className="text-[10px] font-mono uppercase tracking-[0.4em] text-emerald-400 block mb-2">
+						IoT Operational Interface
 					</span>
-					<h2 className="text-3xl md:text-5xl font-bold tracking-tight text-stone-100">
-						Live Operating System
+					<h2 className="text-3xl md:text-5xl font-light tracking-tight text-stone-100">
+						Environmental Integration Telemetry
 					</h2>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-					{/* Card 1: Solar */}
-					<div className="bg-stone-900/20 backdrop-blur-md border border-stone-900 p-8 rounded-3xl relative overflow-hidden group">
-						<div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
-						<div className="flex justify-between items-center mb-8">
-							<div className="p-3 bg-stone-900 border border-stone-800 text-amber-400 rounded-xl">
-								<Sun size={20} strokeWidth={1.5} />
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+					{/* Solar Array Tracker */}
+					<div className="bg-stone-900/10 border border-stone-900 p-8 rounded-2xl relative overflow-hidden">
+						<div className="flex justify-between items-start mb-6">
+							<div className="p-3 bg-stone-900 border border-stone-800 rounded-xl text-amber-500">
+								<Sun size={18} strokeWidth={1.5} />
 							</div>
-							<span className="text-[10px] font-mono text-stone-500 tracking-widest uppercase">
-								Grid Operational
+							<span className="text-[9px] font-mono text-stone-500 uppercase tracking-widest">
+								100% Demand Target
 							</span>
 						</div>
-						<p className="text-[11px] uppercase tracking-widest text-stone-400 font-mono mb-1">
-							Solar Conversion Efficiency
+						<p className="text-[10px] font-mono uppercase text-stone-400 mb-1">
+							Solar PV Collection Array
 						</p>
-						<div className="text-3xl font-light text-stone-100 tracking-tight mb-4">
-							98.4
-							<span className="text-xs font-mono text-emerald-400 ml-1">
-								kw/h
+						<div className="text-4xl font-light text-stone-100 font-serif mb-4">
+							0.00
+							<span className="text-xs font-mono ml-1 text-emerald-400">
+								kw/h peak
 							</span>
 						</div>
-						<div className="w-full bg-stone-950 h-[3px] rounded-full overflow-hidden">
-							<motion.div
-								initial={{ width: 0 }}
-								whileInView={{ width: "85%" }}
-								transition={{ duration: 1.5, ease: "easeOut" }}
-								className="bg-gradient-to-r from-amber-500 to-emerald-400 h-full rounded-full"
-							/>
-						</div>
+						<p className="text-stone-500 text-xs font-light leading-relaxed">
+							System engineered with high-capacity tracking arrays to run zero
+							diesel reliance across all wet services.
+						</p>
 					</div>
 
-					{/* Card 2: Hydro */}
-					<div className="bg-stone-900/20 backdrop-blur-md border border-stone-900 p-8 rounded-3xl relative overflow-hidden group">
-						<div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
-						<div className="flex justify-between items-center mb-8">
-							<div className="p-3 bg-stone-900 border border-stone-800 text-blue-400 rounded-xl">
-								<Droplet size={20} strokeWidth={1.5} />
+					{/* Water Recovery Monitor */}
+					<div className="bg-stone-900/10 border border-stone-900 p-8 rounded-2xl relative overflow-hidden">
+						<div className="flex justify-between items-start mb-6">
+							<div className="p-3 bg-stone-900 border border-stone-800 rounded-xl text-blue-400">
+								<Waves size={18} strokeWidth={1.5} />
 							</div>
-							<span className="text-[10px] font-mono text-stone-500 tracking-widest uppercase">
-								Closed Loop Active
+							<span className="text-[9px] font-mono text-emerald-400 uppercase tracking-widest">
+								NESREA Compliant
 							</span>
 						</div>
-						<p className="text-[11px] uppercase tracking-widest text-stone-400 font-mono mb-1">
-							Ecosystem Aquaponics Flow
+						<p className="text-[10px] font-mono uppercase text-stone-400 mb-1">
+							POME-Free Wastewater Yield
 						</p>
-						<div className="text-3xl font-light text-stone-100 tracking-tight mb-4">
-							12,400
-							<span className="text-xs font-mono text-emerald-400 ml-1">
-								L/rec
+						<div className="text-4xl font-light text-stone-100 font-serif mb-4">
+							100
+							<span className="text-xs font-mono ml-1 text-emerald-400">
+								% recycled
 							</span>
 						</div>
-						<div className="w-full bg-stone-950 h-[3px] rounded-full overflow-hidden">
-							<motion.div
-								initial={{ width: 0 }}
-								whileInView={{ width: "92%" }}
-								transition={{ duration: 1.5, ease: "easeOut" }}
-								className="bg-gradient-to-r from-blue-500 to-emerald-400 h-full rounded-full"
-							/>
-						</div>
+						<p className="text-stone-500 text-xs font-light leading-relaxed">
+							Integrated structural greywater circuits filtering directly to
+							irrigate secondary agricultural lines.
+						</p>
 					</div>
 
-					{/* Card 3: Soil/Bio */}
-					<div className="bg-stone-900/20 backdrop-blur-md border border-stone-900 p-8 rounded-3xl relative overflow-hidden group">
-						<div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
-						<div className="flex justify-between items-center mb-8">
-							<div className="p-3 bg-stone-900 border border-stone-800 text-emerald-400 rounded-xl">
-								<Activity size={20} strokeWidth={1.5} />
+					{/* Security Perimeter Node */}
+					<div className="bg-stone-900/10 border border-stone-900 p-8 rounded-2xl relative overflow-hidden">
+						<div className="flex justify-between items-start mb-6">
+							<div className="p-3 bg-stone-900 border border-stone-800 rounded-xl text-emerald-400">
+								<ShieldCheck size={18} strokeWidth={1.5} />
 							</div>
-							<span className="text-[10px] font-mono text-stone-500 tracking-widest uppercase">
-								Nutrient Optimal
+							<span className="text-[9px] font-mono text-stone-500 uppercase tracking-widest">
+								Separated Perimeters
 							</span>
 						</div>
-						<p className="text-[11px] uppercase tracking-widest text-stone-400 font-mono mb-1">
-							Substrate Microbial Health
+						<p className="text-[10px] font-mono uppercase text-stone-400 mb-1">
+							Security Matrix Integration
 						</p>
-						<div className="text-3xl font-light text-stone-100 tracking-tight mb-4">
-							99.1
-							<span className="text-xs font-mono text-emerald-400 ml-1">
-								index
+						<div className="text-4xl font-light text-stone-100 font-serif mb-4">
+							24/7
+							<span className="text-xs font-mono ml-1 text-emerald-400">
+								cctv node
 							</span>
 						</div>
-						<div className="w-full bg-stone-950 h-[3px] rounded-full overflow-hidden">
-							<motion.div
-								initial={{ width: 0 }}
-								whileInView={{ width: "99%" }}
-								transition={{ duration: 1.5, ease: "easeOut" }}
-								className="bg-gradient-to-r from-emerald-500 to-emerald-300 h-full rounded-full"
-							/>
-						</div>
+						<p className="text-stone-500 text-xs font-light leading-relaxed">
+							Dedicated perimeter protections supporting children's zones and
+							glamping rings natively.
+						</p>
 					</div>
 				</div>
 			</div>

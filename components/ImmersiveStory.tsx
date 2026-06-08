@@ -1,121 +1,79 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-const STORIES = [
+const PRINCIPLES = [
 	{
-		title: "Live the Farm",
-		text: "Awaken to silent operations inside high-yield growing grids where luxury merges completely with architectural automation.",
+		id: "01",
+		name: "Farm Authenticity First",
+		core: "No resort cloning.",
+		desc: "Every facility built across the footprint must be anchored right against active crop rows. Guests cross operational agricultural workflows at all touchpoints.",
 	},
 	{
-		title: "Sustainability at the Core",
-		text: "Zero-loss water cycles and closed-loop solar collection guarantees zero carbon drag across your temporary structural home footprint.",
+		id: "02",
+		name: "Zero Concrete on Productive Soil",
+		core: "Reversible infrastructure.",
+		desc: "No permanent foundation pours are permitted inside the 2.0ha farm tract. Structures must build on adjustable steel points or compacted local laterite piles.",
 	},
 	{
-		title: "Built with Nature",
-		text: "Organic, structural elements locally excavated and cross-engineered alongside carbon-negative composite elements.",
+		id: "03",
+		name: "100% Green Energy Architecture",
+		core: "Zero diesel usage.",
+		desc: "Demands total off-grid reliance via advanced local tracking solar PV collection grids and high-capacity battery inverter backup blocks.",
+	},
+	{
+		id: "04",
+		name: "Paperless Design Delivery",
+		core: "Pure BIM workflows.",
+		desc: "All blueprints, operation manuals, and handover documentation must be processed digitally via the custom integrated NAFF–HAM Enterprise Operations interface.",
+	},
+	{
+		id: "05",
+		name: "80% Nigerian Material Sourcing",
+		core: "Artisan empowerment.",
+		desc: "Mandates strict localization across structural raw assets, furniture designs, wall ceramics, and decor accents directly using regional Nigerian guilds.",
 	},
 ];
-
-const STATS = [
-	{ label: "Solar Sourced Power", value: 100, suffix: "%" },
-	{ label: "Rainwater Filtration Recovery", value: 85, suffix: "k Liters" },
-	{ label: "Bio-Composite Structure Use", value: 94, suffix: "%" },
-];
-
-function CountingMetric({
-	value,
-	label,
-	suffix,
-}: {
-	value: number;
-	label: string;
-	suffix: string;
-}) {
-	const [count, setCount] = useState(0);
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-	useEffect(() => {
-		if (isInView) {
-			let start = 0;
-			const end = value;
-			const duration = 2000;
-			const startTime = performance.now();
-
-			const animate = (now: number) => {
-				const progress = Math.min((now - startTime) / duration, 1);
-				// Clean easeOutQuad math translation
-				const easeProgress = progress * (2 - progress);
-				setCount(Math.floor(easeProgress * (end - start) + start));
-
-				if (progress < 1) {
-					requestAnimationFrame(animate);
-				}
-			};
-			requestAnimationFrame(animate);
-		}
-	}, [isInView, value]);
-
-	return (
-		<div
-			ref={ref}
-			className="p-6 bg-stone-900/30 border border-stone-900/50 rounded-2xl flex flex-col justify-between h-36">
-			<span className="text-[10px] font-mono tracking-widest text-stone-500 uppercase">
-				{label}
-			</span>
-			<div className="text-4xl font-light text-stone-100 tracking-tight font-serif">
-				{count}
-				{suffix}
-			</div>
-		</div>
-	);
-}
 
 export default function ImmersiveStory() {
 	return (
-		<section className="py-32 bg-stone-950 w-full px-6 relative">
-			<div className="max-w-5xl mx-auto">
-				<div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
-					{/* Left Column Structural Narrative */}
-					<div className="md:col-span-7 flex flex-col gap-20">
-						{STORIES.map((story, idx) => (
-							<motion.div
-								key={idx}
-								initial={{ opacity: 0, x: -20 }}
-								whileInView={{ opacity: 1, x: 0 }}
-								viewport={{ once: true, margin: "-120px" }}
-								transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-								className="max-w-md">
-								<h3 className="text-2xl font-bold tracking-tight text-stone-200 mb-4">
-									{story.title}
-								</h3>
-								<p className="text-stone-400 text-sm font-light leading-relaxed tracking-wide">
-									{story.text}
-								</p>
-							</motion.div>
-						))}
-					</div>
+		<section
+			id="principles"
+			className="py-32 bg-stone-950 w-full px-6 border-t border-stone-900/60">
+			<div className="max-w-6xl mx-auto">
+				<div className="max-w-2xl mb-24">
+					<span className="text-[10px] font-mono uppercase tracking-[0.4em] text-emerald-400 block mb-2">
+						ATC RFP-2026-01 Mandates
+					</span>
+					<h2 className="text-3xl md:text-5xl font-light tracking-tight text-stone-100">
+						Qualifying Tender Principles
+					</h2>
+				</div>
 
-					{/* Right Column Grid Stats Sticky Frame */}
-					<div className="md:col-span-5 md:sticky md:top-32 w-full grid grid-cols-1 gap-4">
-						<div className="mb-4">
-							<span className="text-xs uppercase tracking-[0.3em] text-emerald-400 mb-2 block font-medium">
-								Real-time Impact Metrics
-							</span>
-							<h4 className="text-lg font-bold text-stone-300 tracking-tight">
-								Environmental Accountability
-							</h4>
-						</div>
-						{STATS.map((stat, idx) => (
-							<CountingMetric
-								key={idx}
-								value={stat.value}
-								label={stat.label}
-								suffix={stat.suffix}
-							/>
-						))}
-					</div>
+				<div className="flex flex-col border-t border-stone-900">
+					{PRINCIPLES.map((p, idx) => (
+						<motion.div
+							key={idx}
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, margin: "-100px" }}
+							transition={{ duration: 0.8 }}
+							className="grid grid-cols-1 md:grid-cols-12 py-10 border-b border-stone-900 gap-4 items-baseline group hover:bg-stone-900/10 transition-colors duration-300 px-4">
+							<div className="md:col-span-1 font-mono text-xs text-stone-600 group-hover:text-emerald-500 transition-colors">
+								[{p.id}]
+							</div>
+							<div className="md:col-span-4">
+								<h4 className="text-stone-200 font-medium tracking-wide text-lg">
+									{p.name}
+								</h4>
+								<span className="text-[10px] font-mono uppercase tracking-widest text-emerald-500/70">
+									{p.core}
+								</span>
+							</div>
+							<div className="md:col-span-7 text-stone-400 font-light text-sm tracking-wide leading-relaxed">
+								{p.desc}
+							</div>
+						</motion.div>
+					))}
 				</div>
 			</div>
 		</section>
