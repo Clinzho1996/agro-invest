@@ -178,7 +178,7 @@ export default function Hero() {
 					initial={{ opacity: 0, y: 40 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-					className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-light tracking-tight text-stone-100 balance leading-[0.95] mb-10">
+					className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-bold tracking-tight text-stone-100 balance leading-[0.95] mb-10">
 					Where Agriculture <br />
 					<span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-emerald-100 via-emerald-300 to-stone-100">
 						Meets Experience

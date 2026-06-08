@@ -87,7 +87,7 @@ export default function ImmersiveStory() {
 								viewport={{ once: true, margin: "-120px" }}
 								transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
 								className="max-w-md">
-								<h3 className="text-2xl font-light tracking-tight text-stone-200 mb-4">
+								<h3 className="text-2xl font-bold tracking-tight text-stone-200 mb-4">
 									{story.title}
 								</h3>
 								<p className="text-stone-400 text-sm font-light leading-relaxed tracking-wide">
@@ -103,7 +103,7 @@ export default function ImmersiveStory() {
 							<span className="text-xs uppercase tracking-[0.3em] text-emerald-400 mb-2 block font-medium">
 								Real-time Impact Metrics
 							</span>
-							<h4 className="text-lg font-light text-stone-300 tracking-tight">
+							<h4 className="text-lg font-bold text-stone-300 tracking-tight">
 								Environmental Accountability
 							</h4>
 						</div>

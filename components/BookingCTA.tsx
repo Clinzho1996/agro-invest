@@ -11,7 +11,7 @@ export default function BookingCTA() {
 					<span className="text-xs uppercase tracking-[0.4em] text-emerald-400 mb-6 font-medium">
 						Limited Seasonal Allocation
 					</span>
-					<h2 className="text-4xl md:text-6xl font-light tracking-tight text-stone-100 mb-6 leading-tight">
+					<h2 className="text-4xl md:text-6xl font-bold tracking-tight text-stone-100 mb-6 leading-tight">
 						Plan Your Visit
 					</h2>
 					<p className="text-stone-400 text-sm font-light tracking-wide leading-relaxed mb-10">

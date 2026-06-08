@@ -18,7 +18,7 @@ export default function Header() {
 					/>
 				</div>
 				<span className="text-stone-100 font-mono text-xs tracking-[0.3em] font-medium uppercase">
-					AGRO <span className="text-emerald-400">X</span>
+					NAFF–HAM <span className="text-emerald-400">AGRO</span>
 				</span>
 			</div>
 

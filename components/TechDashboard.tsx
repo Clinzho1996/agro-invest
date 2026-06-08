@@ -10,7 +10,7 @@ export default function TechDashboard() {
 					<span className="text-xs uppercase tracking-[0.3em] text-emerald-400 mb-3 block font-medium">
 						Ecosystem Control Telemetry
 					</span>
-					<h2 className="text-3xl md:text-5xl font-light tracking-tight text-stone-100">
+					<h2 className="text-3xl md:text-5xl font-bold tracking-tight text-stone-100">
 						Live Operating System
 					</h2>
 				</div>

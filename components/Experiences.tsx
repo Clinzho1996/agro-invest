@@ -55,7 +55,7 @@ export default function Experiences() {
 						<span className="text-xs uppercase tracking-[0.3em] text-emerald-400 mb-3 block font-medium">
 							Curated Living
 						</span>
-						<h2 className="text-3xl md:text-5xl font-light tracking-tight text-stone-100">
+						<h2 className="text-3xl md:text-5xl font-bold tracking-tight text-stone-100">
 							Immersive Curations
 						</h2>
 					</div>

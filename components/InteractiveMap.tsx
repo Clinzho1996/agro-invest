@@ -118,7 +118,7 @@ export default function InteractiveMap() {
 				<h2 className="text-xs uppercase tracking-[0.3em] text-emerald-400 mb-2 font-medium">
 					Digital Twin Architecture
 				</h2>
-				<p className="text-3xl font-light text-stone-200 tracking-tight">
+				<p className="text-3xl sm:text-4xl font-bold text-stone-200 tracking-tight">
 					Interactive Estate Grid
 				</p>
 			</div>
